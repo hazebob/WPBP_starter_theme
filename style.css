@@ -1,0 +1,17 @@
+/*
+Theme Name: wpbp_test
+Theme URI: http://
+Author: Yunki Moon
+Author URI: http://
+Description: wpbp_test
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wpbp_test
+Tags:
+*/
+
+@import url('assets/css/normalize.css');
+@import url('assets/css/element.css');
+@import url('assets/css/layout.css');
+@import url('assets/css/editor.css');

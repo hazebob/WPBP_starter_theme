@@ -1,0 +1,32 @@
+{
+  "name": "WPBP",
+  "version": "0.0.0",
+  "authors": [
+    ""
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexslider": "~2.5.0",
+    "headjs": "~1.0.3"
+  },
+  "install": {
+    "path": {
+      "js": "assets/js/lib",
+      "css": "assets/css/lib"
+    },
+    "sources": {
+      "alertify.js" : [
+        "bower_components/alertify.js/lib/alertify.min.js",
+        "bower_components/alertify.js/themes/alertify.core.css",
+        "bower_components/alertify.js/themes/alertify.default.css"
+      ]
+    }
+  }
+}

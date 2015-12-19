@@ -1,0 +1,113 @@
+/* 에디터 */
+
+.entry-content * {color: inherit;}
+
+.entry-content img {max-width: 100%;height: auto;}
+
+.entry-content .ih {font-size: 12px;font-family: Verdana;border-bottom: 1px solid #ddd;padding: 30px 0 10px 0;}
+
+.entry-content .lm {background: none;}
+
+.entry-content {line-height: 1.7;color: #585858;font-size: 14px;overflow: hidden;}
+.en .entry-content {font-size: 13px;}
+.entry-content div,
+.entry-content span,
+.entry-content font,
+.entry-content b {color: inherit;}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {line-height: 1.4;margin-bottom: 15px;font-weight: bold;}
+
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {margin-bottom: 15px;}
+
+.entry-content h1 {font-size: 28px;color:#666}
+.entry-content h2 {font-size: 24px;color: #666}
+.entry-content h3 {font-size: 19px;color: #666}
+.entry-content h4 {font-size: 17px;}
+.entry-content h5 {font-size: 15px;}
+.entry-content h6 {font-size: 13px;}
+
+.entry-content h3.odd {text-align: center;padding:15px 0 15px 0;font-size: 24px;background: url(../images/h3odd.png) 50% top no-repeat;margin:30px 0 0 0;}
+
+.entry-content a {color: #666;}
+
+.entry-content p {line-height: 1.6;padding:0 0 20px 0;color: #585858}
+.entry-content p a {color:#666;white-space:pre-line;word-wrap:break-word;word-break: break-all;max-width:560px;overflow: hidden;text-overflow: ellipsis;}
+.entry-content p a:hover {color:#8F1219; text-decoration: underline;}
+
+.entry-content ul {padding-bottom: 20px;list-style: none;padding:0 0 15px 3px;}
+.entry-content ul li {list-style: none;line-height:1.6;background: url(../images/li01.png) 0 13px no-repeat;padding: 3px 0 3px 12px;}
+.entry-content ul li small {font-size: 85%;}
+.entry-content ul li ul {padding: 10px 0;}
+.entry-content ul li ul li {background: url(../images/li01.png) 0 10px no-repeat;}
+.entry-content ul li ul li ul li {background: url(../images/li01.png) 0 10px no-repeat;padding: 0 0 0 15px;}
+.entry-content ol {padding:5px 0 15px 20px;}
+.entry-content ol {list-style: decimal;}
+.entry-content ol li {list-style: decimal;padding: 2px 0;line-height:1.6;}
+
+.entry-content .list01 {list-style: none;}
+.entry-content .list01 li {background: url(../images/bul02.png) 0 10px no-repeat;list-style:none;padding:0 0 7px 10px;}
+.entry-content .list01 li em {font-weight: bold;color: #999;font-size:10px;text-transform: uppercase;font-family: Verdana;display: block;float: left;width: 60px;padding-top: 1px;}
+
+.entry-content .list02 {list-style: none;padding-left: 0;margin-left: 0;}
+.entry-content .list02 li {background: url(../images/bul01.png) 0 10px no-repeat;list-style:none;padding-left: 10px;}
+.entry-content .list02 li em {color: #1b9e88;font-size:12px;display: block;float: left;width: 130px;padding-top: 1px;}
+
+.entry-content blockquote {padding:10px 20px;position: relative;border:1px solid #eee;border-width:1px 0 1px 0;font-style:italic;}
+.entry-content blockquote i {position: absolute;top:20px;left:0;font-size: 30px;color:#999;}
+.entry-content blockquote p {padding-bottom: 0;line-height: 1.7;font-style:italic;text-align: center;}
+
+.entry-content table {margin-bottom: 20px;max-width: 100%!important;width: 100%;border-top: 1px solid #ddd;}
+.entry-content table td,
+.entry-content table th {border-bottom: 1px solid #ddd;padding:10px 15px;vertical-align: middle;}
+.entry-content table th {background: #f8f8f8;text-align: center;}
+.entry-content table p {padding-bottom: 0;margin: 0;}
+
+.entry-content table.t01 th {white-space: nowrap;}
+
+.entry-content table.tb01 {border-top: 2px solid #019a49;border-bottom: 2px solid #019a49;width: 100%;font-size: 13px;margin-bottom: 40px;}
+.entry-content table.tb01 th {background: none;color: #000;vertical-align: middle;text-align: center;width: 20%;}
+.entry-content table.tb01 td {vertical-align: middle;text-align: left;}
+.entry-content table.tb01 td.g {background: #f7f7f7;width: 12%;text-align: center;font-weight: bold;padding-left: 0;padding-right: 0;}
+
+.page-id-152 .entry-content table.tb01 th {width: 22%;}
+.page-id-152 .entry-content table.tb01 td.g {width: 18%;}
+
+.entry-content ul.tb01 {border-top: 2px solid #019a49;border-bottom: 2px solid #019a49;width: 100%;font-size: 13px;margin-bottom: 40px;padding-bottom: 0;}
+.entry-content ul.tb01 li {display: block;padding: 10px 0 10px 16px;background: url(../images/li02.png) 0 50% no-repeat;border-top: 1px solid #ddd;}
+
+/*.entry-content dl {overflow: hidden;padding-bottom: 10px;}
+.entry-content dt {width: 10%;float: left;font-weight: bold;}
+.entry-content dd {width: 85%;float: right;}
+*/
+/*.entry-content img {max-width: 100%!important;height: auto;}*/
+.entry-content .alignleft {float: left;margin-right: 20px;}
+.entry-content .alignright {float: right;margin-left: 20px;}
+.entry-content .aligncenter {float: none;margin: 0 auto;text-align: center;}
+.entry-content img.aligncenter {margin: 0 auto;display: block;}
+.entry-content hr {display: block;margin: 20px 0;}
+
+.entry-content .box {border:1px solid #ddd;line-height: 1.6;margin-bottom: 15px;padding:15px 20px;clear: both;overflow: hidden;}
+.entry-content .box01 {border-radius: 5px;}
+.entry-content .box02 {background: #f8f8f8;}
+
+.entry-content .box01 em {font-size: 13px;vertical-align: top;font-weight: bold;color: #8F1219;padding: 0 10px 0 0;}
+
+.entry-content .wp-caption {max-width:100%!important;margin-bottom: 20px;background: #f5f5f5;}
+.entry-content .wp-caption .wp-caption-text {padding: 5px;font-size: 12px;text-align: right;border-bottom: 1px solid #ddd;}
+
+.entry-content .btn01 {background: #333333;;color: #fff;font-size: 13px;padding:8px 18px;border:0;cursor: pointer;font-family: inherit;}
+.entry-content .btn01:hover {text-decoration: none;background:#8D1219;color: #fff;}
+
+.entry-content .tabs .tabul {overflow: hidden;border-bottom: 2px solid #1DB6EA;padding: 0 1px;}
+.entry-content .tabs .tabul li {background: none;padding: 0;margin: 0 4px;display: block;float: left;margin-left: -1px;position: relative;border:2px solid #ddd;border-width:2px 2px 0 2px;border-radius: 5px 5px 0 0;}
+.entry-content .tabs .tabul li a {display: block;padding: 5px 17px;font-size: 15px;color: #adadad;}
+.entry-content .tabs .tabul li.ui-state-active {border: 2px solid #1DB6EA;z-index: 9;border-width:2px 2px 0 2px}
+.entry-content .tabs .tabul li.ui-state-active a {color: #1DB6EA;font-weight: bold;}
+.entry-content .tabs .tabpn {padding: 20px 0;}

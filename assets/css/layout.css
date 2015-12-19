@@ -1,0 +1,41 @@
+/* reset */
+.tog,
+.screen-reader-text {display: none;}
+
+/* header */
+
+
+/* main */
+
+
+/* body */
+
+.site-content {}
+
+/* footer */
+
+
+/* 페이지 */
+
+
+@media only screen and (max-width:640px){
+	.header-inner,
+	.content-area,
+	.footer-inner {width: 92%;}
+
+	.site-title a {}
+
+	.gnb {position: absolute;top: -2px;left: -90%;width: 80%;background: #716859; text-align: center;z-index: 100000000;opacity: 0.95;-webkit-box-shadow: 2px 0 2px 2px rgba(0, 0, 0, .2);box-shadow: 2px 0 2px 2px rgba(0, 0, 0, .2);background-size: 70% auto;padding: 95px 0 0 0;-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+	height: 100%;}
+	.on .gnb {left: -5%;}
+	.gnb .menu {padding: 0 10%;}
+	.gnb .menu > li {float: none;display: block;width: 100%;border-bottom: 1px solid #8d867a;}
+	.gnb .menu > li a {color: #fff;}
+	.gnb .menu > li .sub-menu {position: relative;display: block;background: none;top: 0;left: 0;border:0;}
+	.gnb .lang {position: relative;top: 0;left: 0;width: 100%;padding: 30px 0 0 0;}
+	.gnb .menu > li.hover > a {background: none;}
+	.gnb .menu > li .sub-menu a:hover {background: none;}
+
+}

@@ -1,0 +1,4 @@
+// gnb
+$(window).load(function() {
+
+});
