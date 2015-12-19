@@ -6,25 +6,25 @@
  */
 
 if ( ! function_exists( 'WPBPsetup' ) ) :
-function WPBPsetup() {
+	function WPBPsetup() {
 
-  load_theme_textdomain( 'open', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'open', get_template_directory() . '/languages' );
 
-  add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'automatic-feed-links' );
 
-  add_theme_support( 'title-tag' );
+		add_theme_support( 'title-tag' );
 
-  add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
 
-  register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'open' ),
-  ) );
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', 'open' ),
+			) );
 
-  add_theme_support( 'html5', array(
-    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-  ) );
+		add_theme_support( 'html5', array(
+			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+			) );
 
-}
+	}
 endif; // WPBPsetup
 add_action( 'after_setup_theme', 'WPBPsetup' );
 
@@ -37,7 +37,7 @@ function WPBPwidgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
 }
 add_action( 'widgets_init', 'WPBPwidgets_init' );
 
@@ -64,7 +64,7 @@ function WPBPscripts() {
 		'headjs'  => 'head.min.js',
 		'hoverIntent'  => 'jquery.hoverIntent.js',
 		'flexslider'  => 'jquery.flexslider.js'
-	);
+		);
 	foreach ($libraries as $key => $value) {
 		wp_enqueue_script( $key, get_template_directory_uri() . '/assets/js/lib/' . $key . '/' . $value );
 	}
@@ -82,68 +82,68 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // 태그 리스트
 function taglist ($postid) {
-  $tags = wp_get_post_tags($postid);
-  $result .= "<ul>";
-  for ($i=0; $i < count($tags); $i++) {
-    $html = "<li><a href=\"/archives/tag/{$tags[$i]->name}\">{$tags[$i]->name}</a></li>";
-    $result .= $html;
-  }
-  $result .= "</ul>";
-  return $result;
+	$tags = wp_get_post_tags($postid);
+	$result .= "<ul>";
+	for ($i=0; $i < count($tags); $i++) {
+		$html = "<li><a href=\"/archives/tag/{$tags[$i]->name}\">{$tags[$i]->name}</a></li>";
+		$result .= $html;
+	}
+	$result .= "</ul>";
+	return $result;
 }
 
 // 최신글 노출
 function idxrec( $category, $title, $number ) {
-  echo "<div class=\"inner\">";
-  echo "<h1 class=\"wg-tit\"><strong>{$title}</strong><a href=\"/?cat={$category}\" class=\"wg-more\"><i class=\"xe xi-plus\"></i></a></h1>";
-  echo "<ul class=\"wg-list\" >";
-  $args = array(
-          'showposts' => $number,
-          'post_type' => 'post',
-          'cat' => $category,
-      );
+	echo "<div class=\"inner\">";
+	echo "<h1 class=\"wg-tit\"><strong>{$title}</strong><a href=\"/?cat={$category}\" class=\"wg-more\"><i class=\"xe xi-plus\"></i></a></h1>";
+	echo "<ul class=\"wg-list\" >";
+	$args = array(
+		'showposts' => $number,
+		'post_type' => 'post',
+		'cat' => $category,
+		);
 
-  $loopb = new WP_Query( $args );
-  if( $loopb->have_posts() ) {
-    while ( $loopb->have_posts() ) : $loopb->the_post();
-      get_template_part( 'content', 'list' );
-    endwhile;
-  } else {
-    echo "<li>준비중입니다.</li>";
-  }
-  echo "</ul>";
-  echo "</div>";
+	$loopb = new WP_Query( $args );
+	if( $loopb->have_posts() ) {
+		while ( $loopb->have_posts() ) : $loopb->the_post();
+		get_template_part( 'content', 'list' );
+		endwhile;
+	} else {
+		echo "<li>준비중입니다.</li>";
+	}
+	echo "</ul>";
+	echo "</div>";
 
 }
 
 // 텍스트 자르기
 function text_cut($str, $len, $poststr="...") {
-     if (mb_strlen($str) <= $len) {
-     //if (strlen($str) <= $len) {
-          return $str;
-     } else {
-          return mb_substr($str, 0, $len, 'UTF-8') . $poststr;
-          //return substr($str, 0, $len) . $poststr;
-     }
+	if (mb_strlen($str) <= $len) {
+	 //if (strlen($str) <= $len) {
+		return $str;
+	} else {
+		return mb_substr($str, 0, $len, 'UTF-8') . $poststr;
+		  //return substr($str, 0, $len) . $poststr;
+	}
 }
 
 // 첫 이미지
 function catch_that_image() {
-  global $post, $posts;
-  $first_img = '';
-  ob_start();
-  ob_end_clean();
-  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  $first_img = $matches [1] [0];
+	global $post, $posts;
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	$first_img = $matches [1] [0];
 
-  // if(strpos($first_img, '.gif')) {
-  //  return false;
-  // }
+	// if(strpos($first_img, '.gif')) {
+	//  return false;
+	// }
 
-  if(empty($first_img)){ //Defines a default image
-    return false;
-  }
-  return $first_img;
+	if(empty($first_img)){ //Defines a default image
+		return false;
+	}
+	return $first_img;
 }
 
 // 첨부파일
@@ -154,15 +154,15 @@ function display_uploads($postid)
 		'numberposts' => null,
 		'post_status' => null,
 		'post_parent' => $postid
-	);
+		);
 	$attachments = get_posts($args);
 	if ($attachments) {
 		?>
-		<ul>
-			<?php
-			foreach ($attachments as $attachment) {
+	<ul>
+		<?php
+		foreach ($attachments as $attachment) {
 			$mime = apply_filters('the_title', $attachment->post_mime_type);
-				if (!preg_match('/image/',$mime)) {
+			if (!preg_match('/image/',$mime)) {
 				?>
 				<li class="<?php echo apply_filters('the_title', $attachment->post_mime_type); ?>">
 					<a href="<?php echo $attachment->guid; ?>" title="<?php echo apply_filters('the_title', $attachment->post_title); ?>">
@@ -170,9 +170,9 @@ function display_uploads($postid)
 					</a>
 				</li>
 				<?php
-				}
 			}
-			?>
-		</ul>
+		}
+		?>
+	</ul>
 	<?php }
 }
