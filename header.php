@@ -28,7 +28,7 @@
 		<div class="header-inner">
 			<div class="site-branding logo">
 				<h1 class="site-title">
-					<a href="<?php echo $homeurl; ?>" rel="home">
+					<a href="<?php echo home_url('/'); ?>" rel="home">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
 					</a>
 				</h1>
