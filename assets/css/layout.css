@@ -2,7 +2,34 @@
 .tog,
 .screen-reader-text {display: none;}
 
+/* layout */
+.header-inner,
+.site-content,
+.footer-inner {width: 92%;max-width: 1100px;margin: 0 auto;}
+
+.sidebar {width: 24%;float: right;padding: 31px 0 0 0;}
+.content-area {width: 72%;float: left;}
+
 /* header */
+
+.header-inner {padding: 20px 0;position: relative;}
+.site-title {padding: 0 0 20px 0;}
+.site-title a {display: block;width: 210px;}
+
+.header-inner .searchform {position: absolute;right: 0;top: 68px;}
+
+.gnb {background: #fafafa;border-top: 2px solid #02aecc;}
+.gnb .menu-gnb-container {float: left;}
+.gnb .menu-gnb-container .menu > li {display: block;float: left;}
+.gnb .menu-gnb-container .menu > li > a {color: #2d4146;font-size: 17px;font-weight: bold;padding: 15px 17px;display: block;}
+.gnb .menu-gnb-container .menu > li.current-menu-item > a,
+.gnb .menu-gnb-container .menu > li.current-post-ancestor > a {background: #02aecc;color: #fff}
+.gnb .menu-gnb-container .menu > li.odd > a {color: #f46e0b;background: url(../images/hash.png) 13px 7px no-repeat;padding: 15px 17px 15px 30px;}
+.gnb .menu-gnb-container .menu > li.odd.current-menu-item > a {background: #f46e0b url(../images/hash.png) 11px 3px no-repeat;color: #fff;}
+
+.gnb .menu-gnb-second-container {float: right;font-size: 14px;}
+.gnb .menu-gnb-second-container .menu > li {display: block;float: left;}
+.gnb .menu-gnb-second-container .menu > li > a {padding: 16px 15px;display: block;}
 
 
 /* main */
