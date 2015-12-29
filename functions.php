@@ -176,3 +176,9 @@ function display_uploads($postid)
 	</ul>
 	<?php }
 }
+
+// 요약글 길이
+function custom_excerpt_length( $length ) {
+	return 60;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
