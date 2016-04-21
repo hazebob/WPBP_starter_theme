@@ -11,9 +11,12 @@
   "dependencies": {
     "bower": "^1.6.7",
     "bower-installer": "^1.2.0",
+    "browser-sync": "^2.12.3",
     "gulp": "^3.9.0",
+    "gulp-ftp": "^1.1.0",
     "gulp-prompt": "^0.1.2",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4"
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.2.0"
   }
 }

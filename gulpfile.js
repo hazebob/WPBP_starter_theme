@@ -1,11 +1,14 @@
 var gulp    = require('gulp');
+// var gutil = require('gulp-util');
 var replace = require('gulp-replace');
 var prompt  = require('gulp-prompt');
 var rename  = require('gulp-rename');
-// var favicons = require('gulp-favicons');
+var sass = require('gulp-sass');
+var ftp = require('gulp-ftp');
+var browserSync = require('browser-sync').create();
 
 gulp.task('default', function() {
-  console.log('hi!');
+  console.log(config);
 });
 
 gulp.task('replace', function(){
@@ -71,13 +74,38 @@ gulp.task('replace', function(){
 
 });
 
-// gulp.task('favicon', function () {
-//     gulp.src('assets/images/favicon/favicon.png')
-//       .pipe(favicons({
-//         html: "assets/images/favicon/favicon.html"
-//       }))
-//       .pipe(gulp.dest('assets/images/favicon/'));
-// });
+// {outputStyle: 'compressed'}
+
+gulp.task('sass', function () {
+  return gulp.src('assets/css/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('assets/css'));
+});
+
+gulp.task('ftp-deploy',['sass'], function () {
+    return gulp.src('assets/css/style.css')
+        .pipe(ftp({
+            host: '',
+            user: '',
+            pass: '',
+            remotePath : ''
+        }));
+});
+
+gulp.task('browser-stream',['ftp-deploy'], function () {
+  return gulp.src([
+      'assets/css/style.css'
+    ])
+    .pipe(browserSync.stream());
+});
+
+gulp.task('sync', function() {
+  browserSync.init({
+    proxy: "",
+    notify: false
+  });
+  gulp.watch('assets/css/*.scss', ['browser-stream']);
+});
 
 // 묶음 명령
 gulp.task('theme', ['replace']);
