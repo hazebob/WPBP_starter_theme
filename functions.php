@@ -46,6 +46,7 @@ add_action( 'widgets_init', 'WPBPwidgets_init' );
 */
 function WPBPscripts() {
 	wp_enqueue_style( 'WPBPstyle', get_stylesheet_uri() );
+	wp_enqueue_style( 'WPBP_base_style', get_template_directory_uri() . '/assets/css/style.css','',date('ymdhms') );
 	wp_enqueue_style( 'xeicon', '//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
