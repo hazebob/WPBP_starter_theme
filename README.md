@@ -5,7 +5,12 @@ This is Starter Theme for Wordpress.
 
 ## 설치
 
-- git clone
-- npm install
-- gulp theme
+- `git clone`
+- `npm install`
+- `gulp theme`
+
+## live CSS
+
+- Write FTP host, username, password to gulpfile.js
+- `gulp sync`
 
