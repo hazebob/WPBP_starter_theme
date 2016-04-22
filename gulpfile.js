@@ -1,5 +1,4 @@
 var gulp    = require('gulp');
-// var gutil = require('gulp-util');
 var replace = require('gulp-replace');
 var prompt  = require('gulp-prompt');
 var rename  = require('gulp-rename');
@@ -8,7 +7,7 @@ var ftp = require('gulp-ftp');
 var browserSync = require('browser-sync').create();
 
 gulp.task('default', function() {
-  console.log(config);
+  console.log('hello');
 });
 
 gulp.task('replace', function(){
@@ -17,27 +16,27 @@ gulp.task('replace', function(){
     {
         type: 'input',
         name: 'themeName',
-        message: 'Theme name?'
+        message: '테마 이름(영문)을 입력하세요'
     },
     {
         type: 'input',
         name: 'host',
-        message: 'Ftp host?'
+        message: 'Ftp 호스트를 입력하세요(sftp-config)'
     },
     {
         type: 'input',
         name: 'user',
-        message: 'Ftp user?'
+        message: 'Ftp 아이디를 입력하세요(sftp-config)'
     },
     {
         type: 'input',
         name: 'password',
-        message: 'Ftp password?'
+        message: 'Ftp 비밀번호를 입력하세요(sftp-config)'
     },
     {
         type: 'input',
         name: 'remotePath',
-        message: 'Ftp Remote Path?'
+        message: 'Ftp 원격(remote) 경로를 입력하세요(sftp-config)'
     }
     ],
     function(res){
@@ -74,16 +73,15 @@ gulp.task('replace', function(){
 
 });
 
-// {outputStyle: 'compressed'}
-
 gulp.task('sass', function () {
   return gulp.src('assets/css/style.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('ftp-deploy',['sass'], function () {
     return gulp.src('assets/css/style.css')
+        // 아래 내용을 입력해주세요.
         .pipe(ftp({
             host: '',
             user: '',
@@ -101,7 +99,7 @@ gulp.task('browser-stream',['ftp-deploy'], function () {
 
 gulp.task('sync', function() {
   browserSync.init({
-    proxy: "",
+    proxy: '', // proxy(작업 주소) 입력
     notify: false
   });
   gulp.watch('assets/css/*.scss', ['browser-stream']);
