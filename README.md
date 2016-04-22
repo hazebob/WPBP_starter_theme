@@ -6,12 +6,12 @@
 
 ## 설치
 
-- `git clone`
-- `npm install`
-- `gulp theme`
+- `git clone` 레포지터리를 복제합니다.
+- `npm install` 테마 관련 모듈들을 설치합니다.
+- `gulp theme` 입력하여 테마 기본 설정을 진행합니다.
 
 ## 개발시 live CSS editing 이용
 
-- `gulp sync`
 - FTP sync를 위해 gulpfile.js에 host, username, password를 입력해주세요.
+- `gulp sync`
 
