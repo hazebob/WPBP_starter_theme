@@ -1,7 +1,8 @@
 # WPBP_starter_theme
 
-워드프레스 기본 테마이다.
-This is Starter Theme for Wordpress.
+- 설치형 워드프레스 테마입니다.
+- [_undescore](https://github.com/automattic/_s) 테마에 기초하여 제작했습니다.
+- [meta-box-class](https://github.com/bainternet/My-Meta-Box)를 내장하고 있습니다.
 
 ## 설치
 
@@ -9,8 +10,8 @@ This is Starter Theme for Wordpress.
 - `npm install`
 - `gulp theme`
 
-## live CSS
+## 개발시 live CSS editing 이용
 
-- Write FTP host, username, password to gulpfile.js
 - `gulp sync`
+- FTP sync를 위해 gulpfile.js에 host, username, password를 입력해주세요.
 
