@@ -1,0 +1,39 @@
+.entry-content {
+	img {max-width: 100%;}
+	figure {max-width: 100%;padding-bottom: 20px;}
+	.wp-caption-text {text-align: right;font-size: 13px;padding: 10px 0;text-decoration: underline;color:#666;}
+	.alignleft {float: left;width: 48%;margin:0 2% 0 0;}
+	.alignright {float: right;width: 48%;margin:0 0 0 2%;}
+	.aligncenter {margin: 0 auto;}
+	hr {border:0;height: 1px;background: #ccc;clear:both;padding: 0;margin:15px 0 30px;}
+	p {text-align: left;line-height: 1.6;padding-bottom: 15px;}
+	p.has-image {padding: 0;}
+	sup {vertical-align: text-top;font-size: 12px;color: inherit;padding: 0 1px;position: relative;top: -3px;}
+	b,
+	strong {color:inherit;}
+	table {width: 100%;}
+	table td {padding: 10px 0;text-align: left;}
+	ul {text-align: left;list-style: square;margin:10px 0 10px 20px;}
+	ul li {list-style: square;}
+	ol {text-align: left;list-style: square;margin:10px 0 10px 20px;}
+	ol li {list-style: decimal;}
+	* {color: inherit;}
+
+	.colgal {
+		width: 100%;position: relative;padding-bottom:40px;
+		.sliders {list-style: none;margin: 0;}
+		.sliders li {display: none;list-style: none;}
+		.sliders li img {width: 100%;height: auto;vertical-align: middle;display: block;}
+		.sliders li .caption {text-align: right;font-size: 13px;padding: 10px 0;color:#666;}
+		.direction-nav {margin: 0;list-style: none}
+		.direction-nav li {list-style: none}
+		.direction-nav a {position: absolute;top: 50%;display: block;margin-top: -28px;}
+		.direction-nav a img {width: 22px;height: auto;}
+		.direction-nav a.prev {left: 10px;}
+		.direction-nav a.next {right: 10px;}
+		.control-nav {text-align: center;width: 100%;position: absolute;bottom: 10px;left: 0;list-style: none;margin: 0;}
+		.control-nav li {display: inline-block;padding: 0 2px;list-style: none;}
+		.control-nav li a {display: inline-block;background: #ccc;width: 15px;height: 15px;border-radius: 50em;text-indent: -9999px;cursor: pointer;}
+		.control-nav li a.active {background:#c6ac65;}
+	}
+}

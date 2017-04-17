@@ -43,34 +43,38 @@ function parse_gallery_shortcode($atts) {
     $images = get_posts($args);
 
     $res .= "<div class=\"colgal\"><ul class=\"sliders\">";
-
     foreach ( $images as $image ) {
         $caption = $image->post_excerpt;
-
         $description = $image->post_content;
         if($description == '') $description = $image->post_title;
-
         $image_alt = get_post_meta($image->ID,'_wp_attachment_image_alt', true);
-
-        // render your gallery here
-        // $img = wp_get_attachment_image($image->ID, $size);
         $img = wp_get_attachment_image_src($image->ID, $size);
         $homeurl = home_url();
         $imgurl = str_replace($homeurl, "", $img);
-        // var_dump($imgurl);
         $thumb = $image->guid;
-        $imgwithwm = "/wp-content/themes/totalmarble/wm.php?img=/home/hosting_users/totalmarble/www{$imgurl[0]}";
-        $imgwithwm = "<img src=\"{$imgwithwm}\" />";
-
-        // /wp-content/themes/totalmarble/wm.php?img=/home/hosting_users/totalmarble/www/wp-content/uploads/2015/01/00101.jpg
-
-// var_dump($image);
-// var_dump($thumb);
-
-        // echo "<li><a href=\"{$thumb}\" rel=\"gallery1\"  class=\"various\">{$imgwithwm}</a></li>";
         $res .= "<li data-thumb=\"{$thumb}\"><img src=\"{$thumb}\" ></li>";
     }
+    $msg = ml_echo('Do you want to view this House?', true);
+    $btn = ml_echo('Request us', true);
+    $res .= "<li><div class=\"gallast\"><h1>".$msg."</h1><a href=\"/request\">".$btn."</a></div></li>";
     $res .= "</ul></div>";
+
+    $res .= "<div class=\"colgal-carousel\"><ul class=\"sliders\">";
+    foreach ( $images as $image ) {
+        $caption = $image->post_excerpt;
+        $description = $image->post_content;
+        if($description == '') $description = $image->post_title;
+        $image_alt = get_post_meta($image->ID,'_wp_attachment_image_alt', true);
+        $img = wp_get_attachment_image_src($image->ID, $size);
+        $homeurl = home_url();
+        $imgurl = str_replace($homeurl, "", $img);
+        $thumb = $image->guid;
+        $res .= "<li data-thumb=\"{$thumb}\"><img src=\"{$thumb}\" ></li>";
+    }
+    $res .= "<li><div class=\"gallast\"><h1><img src=\"/wp-content/themes/withusrealty/assets/images/logo.png\"></h1></div></li>";
+    $res .= "</ul></div>";
+
+
     return $res;
 }
 ?>

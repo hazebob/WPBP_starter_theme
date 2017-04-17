@@ -183,3 +183,8 @@ function custom_excerpt_length( $length ) {
 	return 60;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// 어드민 바
+show_admin_bar(false);
+
+

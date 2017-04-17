@@ -83,10 +83,10 @@ gulp.task('ftp-deploy',['sass'], function () {
     return gulp.src('assets/css/style.css')
         // 아래 내용을 입력해주세요.
         .pipe(ftp({
-            host: '',
-            user: '',
-            pass: '',
-            remotePath : ''
+            host: 'WPBP_HOST',
+            user: 'WPBP_USER',
+            pass: 'WPBP_PASSWORD',
+            remotePath : 'WPBP_REMOTEPATH'
         }));
 });
 

@@ -1,11 +1,9 @@
 @import 'normalize.css';
+@import 'open-color.scss';
+@import 'sns-color.scss';
 
-$dgreen: #417505;
-$green : #8CB93D;
-$brown : #51413c;
-$gray : #666;
-$dgray : #595A5C;
-$yellow : #CFD272;
+@import '../css/lib/alertify.js/alertify.core.css';
+@import '../css/lib/alertify.js/alertify.default.css';
 
 @mixin spr($width,$height,$bg) {width:$width;height:$height;background:url($bg) no-repeat 0 0;display:block;text-indent:-9999px;overflow:hidden; }
 
@@ -27,12 +25,19 @@ LAYOUT
 .content-area {}
 
 /* header */
-.site-header {border-bottom: 2px solid $dgreen;}
-.header-inner {padding: 35px 0 0 0;position: relative;margin: 0 auto;}
-.site-title {padding: 0 0 20px 0;}
-.site-title a {display: block;width: 300px;margin: 0 auto;}
+.site-header {
+	.header-inner {
 
-.header-inner .searchform {position: absolute;right: 0;top: 68px;}
+	}
+
+	.searchform {}
+}
+.site-title {
+
+	a {
+
+	}
+}
 
 .gnb {
 	.menu-gnb-container {
@@ -41,21 +46,18 @@ LAYOUT
 			text-align: center;
 
 			> li {display: inline-block;position: relative;}
-			> li > a {color: #2d4146;font-size: 17px;font-weight: bold;padding: 15px 35px 25px;display: block;}
-			> li.hover > a {color: $green}
+			> li > a {display: block}
+			> li.hover > a {}
 			> li.current-menu-item > a,
 			> li.current-page-parent > a,
-			> li.current-post-ancestor > a {color: $dgreen;border-bottom: 3px solid $dgreen;padding-bottom: 22px;}
-			> li.blog:after {content:"\e820";font-family: xeicon;position: absolute;top: 19px;right: 13px;font-size: 13px;background: $green;padding: 2px;border-radius: 1px;line-height: 1;color: #fff;}
+			> li.current-post-ancestor > a {}
 
 			.sub-menu {
 				display: none;
-				position: absolute;width: 250px;top: 58px;left: 50%;margin-left: -125px;background: $dgreen;padding:10px 0;border-radius:0 0 3px 3px;z-index: 100;border-top: 5px solid #fff;
+				position: absolute;width: 250px;top: 58px;left: 50%;margin-left: -125px;padding:10px 0;border-radius:0 0 3px 3px;z-index: 100;
 
 				li {
-					font-size: 13px;display: block;float: left;width: 50%;
 					a {color: #fff;text-align: center;display: block;padding: 5px 0}
-					a:hover {color: $yellow}
 				}
 			}
 		}
@@ -70,35 +72,22 @@ LAYOUT
 /* footer */
 
 .site-footer {
-	background: $dgreen;border-top: 1px solid $dgreen;
+	.footer-inner {
 
-	.footer-inner {padding: 25px 0;	@include cf;}
+	}
 }
 
 .site-info {
-	width: 32%;float: right;
-	font-size: 14px;color: #fff;line-height: 1.9;
 
-	h1 {font-size: 14px;color: $yellow;padding: 0 0 5px 0;}
-	i {background: $green;padding:3px;border-radius: 2px;margin:0 3px 0 0 ;}
-	a {color: inherit;}
 }
 
-.site-copyright {width: 32%;font-size: 12px;padding:35px 0 0 0;color: #fff;float: right;}
+.site-copyright {
+
+}
 
 .footer-menu {
-	width: 60%;float: left;padding: 4px 0 0 0;
-	.menu {
-		@include cf;
 
-		> li {display: block;float: left;width: 20%;font-size: 12px;}
-		> li > a {font-size: 14px;font-weight: bold;display: block;padding: 0 0 10px 0;color: #fff;}
-		li.blog {display: none;}
-		.sub-menu {
-			li a {display: block;padding:3px 0;color: $green;}
-			li a:hover {color: #fff;}
-		}
-	}
+	.menu {}
 }
 
 /* 페이지 */
@@ -112,14 +101,9 @@ ELEMENT
 .searchform {
 	width: 206px;border:2px solid #ddd;overflow: hidden;
 
-	.search-field {height: 30px;width: 163px;float: left;border:0;padding: 0 5px;line-height: 30px;font-family: inherit;outline:0}
-	.search-submit {height: 31px;width: 28px;line-height: 28px;text-align: center;cursor: pointer;display: block;float: right;font-size: 19px;}
-	.search-submit i {color: #ccc}
-
-	&.on {
-		border:2px solid $dgreen;
-
-		.search-submit i {color: $dgreen;}
+	.search-field {}
+	.search-submit {
+		i {}
 	}
 }
 
@@ -138,29 +122,26 @@ ELEMENT
 	position: relative;
 
 	.entry-title,
-	.page-title {font-size: 28px;padding: 28px 0;font-weight: bold;color: $dgray;text-align: center;position: relative;
-
-		&:after {content:"";position: absolute;width: 200px;height: 1px;background: $green;bottom: 0;left: 50%;margin-left: -100px;}
-
+	.page-title {
+		font-size: 28px;padding: 20px 0;
 	}
 }
 
 /* breadcrumbs */
 .breadcrumbs {
-	font-size: 12px;padding: 0 0 10px 0;color: $gray;position: absolute;top:37px;left: 0;
+	font-size: 12px;
 
 	span,
 	a {color: inherit;}
 	i {padding: 0 2px;}
 }
 
-.entry-content {padding: 25px 0;min-height: 600px}
+.entry-content {min-height: 800px}
 
 /* list module */
 .catlist {overflow: hidden; }
 
 .lm {
-	margin: 10px 0!important;padding: 14px 0;border-bottom: 1px solid #eee;overflow: hidden;
 
 	.img {width: 30%;float: left;}
 	.cont {width: 68%;float: right;}
@@ -176,51 +157,26 @@ ELEMENT
 
 /* single module */
 .post-single {
-	padding: 0 0 40px 0;
 
-	.entry-header {border-bottom: 1px solid #ccc;position: relative;}
+	.entry-header {
+	}
 	.entry-meta {
-		padding: 10px 0 15px;font-size: 12px;
-
 		> span {padding: 0 8px 0 0;color: #999;}
 	}
 
 	.entry-share {
-		position: absolute;right: 0;bottom: 0;padding: 9px 0;
 
-		> span {cursor: pointer;}
 		i {font-size: 18px;}
-		i.xi-facebook {color: #43609C;}
-		i.xi-twitter {color: #55ACEE;}
+		i.xi-facebook {color: $color-fb;}
+		i.xi-twitter {color: $color-tw;}
 		i.xi-social-print {color: #999;}
 	}
 
-	.entry-footer {background: #fafafa;padding:5px 15px;}
-
-	iframe {margin:0 0;width: 100%;}
-}
-
-/*=============================================
-MOBILE
-=============================================*/
-
-@media only screen and (max-width:640px){
-	.header-inner,
-	.content-area,
-	.footer-inner {width: 92%;}
-
-	.site-title a {}
-
-	.gnb {position: absolute;top: -2px;left: -90%;width: 80%;background: #716859; text-align: center;z-index: 100000000;opacity: 0.95;box-shadow: 2px 0 2px 2px rgba(0, 0, 0, .2);background-size: 70% auto;padding: 95px 0 0 0;transition: all .3s;height: 100%;
-
-		.menu {padding: 0 10%;}
-		.menu > li {float: none;display: block;width: 100%;border-bottom: 1px solid $dgreen;}
-		.menu > li a {color: #fff;}
-		.menu > li .sub-menu {position: relative;display: block;background: none;top: 0;left: 0;border:0;}
-		.lang {position: relative;top: 0;left: 0;width: 100%;padding: 30px 0 0 0;}
-		.menu > li.hover > a {background: none;}
-		.menu > li .sub-menu a:hover {background: none;}
-
-		.on & {left: -5%;}
+	.entry-footer {
 	}
 }
+
+@import 'editor.scss';
+@import 'tablet.scss';
+@import 'mobile.scss';
+@import 'print.scss';
