@@ -70,7 +70,7 @@ function WPBPscripts() {
 		wp_enqueue_script( $key, get_template_directory_uri() . '/assets/js/lib/' . $key . '/' . $value );
 	}
 
-	wp_enqueue_script( 'WPBP', get_template_directory_uri() . '/assets/js/WPBP_SCRIPT.js' );
+	wp_enqueue_script( 'WPBP', get_template_directory_uri() . '/assets/js/fb.js' );
 }
 add_action( 'wp_enqueue_scripts', 'WPBPscripts' );
 

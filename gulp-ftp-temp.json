@@ -1,0 +1,6 @@
+{
+	"host": "WPBP_HOST",
+	"user": "WPBP_USER",
+	"password": "WPBP_PASSWORD",
+	"remotePath": "WPBP_REMOTEPATH"
+}

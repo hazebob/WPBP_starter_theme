@@ -69,6 +69,17 @@ gulp.task('replace', function(){
        .pipe(gulp.dest(function (data) {
       return data.base;
       }));
+
+      gulp.src(['gulp-ftp-temp.json'])
+       .pipe(replace('WPBP_HOST', res.host))
+       .pipe(replace('WPBP_USER', res.user))
+       .pipe(replace('WPBP_PASSWORD', res.password))
+       .pipe(replace('WPBP_REMOTEPATH', res.remotePath))
+       .pipe(rename('gulp-ftp.json'))
+       .pipe(gulp.dest(function (data) {
+      return data.base;
+      }));
+
     }));
 
 });
@@ -80,14 +91,10 @@ gulp.task('sass', function () {
 });
 
 gulp.task('ftp-deploy',['sass'], function () {
+    var ftpSetting = require('./gulp-ftp.json');
     return gulp.src('assets/css/style.css')
         // 아래 내용을 입력해주세요.
-        .pipe(ftp({
-            host: 'WPBP_HOST',
-            user: 'WPBP_USER',
-            pass: 'WPBP_PASSWORD',
-            remotePath : 'WPBP_REMOTEPATH'
-        }));
+        .pipe(ftp(ftpSetting));
 });
 
 gulp.task('browser-stream',['ftp-deploy'], function () {
