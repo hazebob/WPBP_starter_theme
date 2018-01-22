@@ -37,6 +37,11 @@ gulp.task('replace', function(){
         type: 'input',
         name: 'remotePath',
         message: 'Ftp 원격(remote) 경로를 입력하세요(sftp-config)'
+    },
+    {
+        type: 'input',
+        name: 'proxy',
+        message: '프록시로 사용할 주소를 입력하세요'
     }
     ],
     function(res){
@@ -75,10 +80,11 @@ gulp.task('replace', function(){
        .pipe(replace('WPBP_USER', res.user))
        .pipe(replace('WPBP_PASSWORD', res.password))
        .pipe(replace('WPBP_REMOTEPATH', res.remotePath))
+       .pipe(replace('WPBP_PROXY', res.proxy))
        .pipe(rename('gulp-ftp.json'))
        .pipe(gulp.dest(function (data) {
       return data.base;
-      }));
+      }));``
 
     }));
 
@@ -105,8 +111,9 @@ gulp.task('browser-stream',['ftp-deploy'], function () {
 });
 
 gulp.task('sync', function() {
+  var ftpSetting = require('./gulp-ftp.json');
   browserSync.init({
-    proxy: '', // proxy(작업 주소) 입력
+    proxy: ftpSetting.proxy, // proxy(작업 주소) 입력
     notify: false
   });
   gulp.watch('assets/css/*.scss', ['browser-stream']);
