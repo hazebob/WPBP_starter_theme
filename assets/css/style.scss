@@ -2,9 +2,6 @@
 @import 'open-color.scss';
 @import 'sns-color.scss';
 
-@import '../css/lib/alertify.js/alertify.core.css';
-@import '../css/lib/alertify.js/alertify.default.css';
-
 @mixin spr($width,$height,$bg) {width:$width;height:$height;background:url($bg) no-repeat 0 0;display:block;text-indent:-9999px;overflow:hidden; }
 
 @mixin cf {*zoom: 1;&:before{content: " ";display: table;}&:after{content: " ";display: table;clear: both;}}
@@ -167,8 +164,8 @@ ELEMENT
 	.entry-share {
 
 		i {font-size: 18px;}
-		i.xi-facebook {color: $color-fb;}
-		i.xi-twitter {color: $color-tw;}
+		i.xi-facebook {color: $facebook;}
+		i.xi-twitter {color: $twitter;}
 		i.xi-social-print {color: #999;}
 	}
 
@@ -177,6 +174,5 @@ ELEMENT
 }
 
 @import 'editor.scss';
-@import 'tablet.scss';
 @import 'mobile.scss';
 @import 'print.scss';
