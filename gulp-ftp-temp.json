@@ -1,7 +1,7 @@
 {
 	"host": "WPBP_HOST",
 	"user": "WPBP_USER",
-	"password": "WPBP_PASSWORD",
-	"remotePath": "WPBP_REMOTEPATH",
+	"pass": "WPBP_PASSWORD",
+	"remotePath": "WPBP_REMOTEPATH/assets/css",
 	"proxy": "WPBP_PROXY"
 }

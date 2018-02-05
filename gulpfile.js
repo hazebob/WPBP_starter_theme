@@ -98,8 +98,8 @@ gulp.task('sass', function () {
 
 gulp.task('ftp-deploy',['sass'], function () {
     var ftpSetting = require('./gulp-ftp.json');
+    delete ftpSetting.proxy;
     return gulp.src('assets/css/style.css')
-        // 아래 내용을 입력해주세요.
         .pipe(ftp(ftpSetting));
 });
 
