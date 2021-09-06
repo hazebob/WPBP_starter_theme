@@ -70,7 +70,7 @@ get_header(); ?>
 				</h1>
 			</header><!-- .page-header -->
 
-			<ul class="catlist">
+			<ul class="archive-list">
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php
