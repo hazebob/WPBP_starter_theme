@@ -80,6 +80,7 @@ add_action( 'wp_enqueue_scripts', 'WPBPscripts' );
 
 require get_template_directory() . '/meta-box-class/my-meta-box-class.php';
 require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/RationalOptionPages.php';
 
 // 태그 리스트
 function taglist ($postid) {
@@ -187,4 +188,28 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 // 어드민 바
 show_admin_bar(false);
 
+// flush_rewrite_rules();
+
+
+// 옵션페이지
+// https://github.com/jeremyHixon/RationalOptionPages
+// if ( !class_exists( 'RationalOptionPages' ) ) {
+// 	require_once('/inc/RationalOptionPages.php');
+// }
+// $pages = array(
+// 	'sample-page'	=> array(
+// 		'page_title'	=> __( 'Sample Page', 'sample-domain' ),
+// 		'sections'		=> array(
+// 			'section-one'	=> array(
+// 				'title'			=> __( 'Section One', 'sample-domain' ),
+// 				'fields'		=> array(
+// 					'default'		=> array(
+// 						'title'			=> __( 'Default', 'sample-domain' ),
+// 					),
+// 				),
+// 			),
+// 		),
+// 	),
+// );
+// $option_page = new RationalOptionPages( $pages );
 
